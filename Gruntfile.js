@@ -100,8 +100,7 @@ module.exports = function(grunt) {
   grunt.registerTask('cov', ['mochacov:cov']);
   grunt.registerTask('release', ['jshint',
     'jsbeautifier:release',
-    'mochacov:test',
-    'mochacov:travis'
+    'mochacov:test'
   ]);
 
   grunt.registerTask('timestamp', function() {
