@@ -1,0 +1,35 @@
+{
+  "name": "site_watcher_example",
+  "version": "0.0.1",
+  "description": "Given a parsing function stores the data in mysql and sends an email when there is new data",
+  "author": "johvik",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/johvik/site_watcher_example.git"
+  },
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "grunt release",
+    "blanket": {
+      "pattern": ["site_watcher_example/lib"]
+    }
+  },
+  "dependencies": {
+    "site_watcher": "~0.0.1",
+    "mysql": "~2.0.1",
+    "nodemailer": "~0.6.0",
+    "cheerio": "~0.13.1",
+    "forever": "~0.10.11",
+    "lodash": "~2.4.1"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.2",
+    "grunt-contrib-jshint": "~0.8.0",
+    "grunt-jsbeautifier": "~0.2.6",
+    "grunt-contrib-watch": "~0.5.3",
+    "grunt-mocha-cov": "~0.2.1",
+    "should": "~3.1.2"
+  },
+  "engine": "node >= 0.10.22"
+}

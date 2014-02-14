@@ -1,0 +1,37 @@
+#!/bin/sh
+### BEGIN INIT INFO
+# Provides:          site_watcher_example
+# Required-Start:    $mysql
+# Required-Stop:     $mysql
+# Default-Start:     2 3 4 5
+# Default-Stop:      0 1 6
+# Short-Description: Site watcher example
+# Description:       See https://github.com/johvik/site_watcher_example
+### END INIT INFO
+
+PATH=/bin:/usr/bin:/usr/local/bin
+HOME=/root
+APP_DIR=/var/www/site_watcher_example
+FOREVER=$APP_DIR/node_modules/.bin/forever
+LOG_DIR=$APP_DIR/logs
+
+case "$1" in
+  start)
+    # Create log dir
+    mkdir -p $LOG_DIR
+    $FOREVER --minUptime 2000 --spinSleepTime 5000 -a -l $LOG_DIR/forever.log -o $LOG_DIR/out.log -e $LOG_DIR/err.log start $APP_DIR/index.js
+    ;;
+  stop)
+    $FOREVER stop $APP_DIR/index.js
+    ;;
+  restart)
+    $FOREVER restart $APP_DIR/index.js
+    ;;
+  status)
+    $FOREVER list
+    ;;
+  *)
+    echo "Usage: $0 {start|stop|restart|status}"
+    exit 3
+    ;;
+esac
