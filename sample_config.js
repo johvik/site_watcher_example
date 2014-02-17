@@ -20,6 +20,10 @@ exports.parse = function(data, cb) {
     item.id = $(this).text();
     item.subject = $(this).text();
     item.html = '<h1>Test ' + $(this).text() + '</h1>';
+
+    // data will be stored in the DB
+    var data = {};
+    item.data.test = 1;
     items.push(item);
   });
   cb(null, items);
