@@ -1,6 +1,6 @@
 {
   "name": "site_watcher_example",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Given a parsing function stores the data in mysql and sends an email when there is new data",
   "author": "johvik",
   "repository": {
@@ -16,7 +16,7 @@
     }
   },
   "dependencies": {
-    "site_watcher": "~0.0.2",
+    "site_watcher": "~0.0.3",
     "mysql": "~2.1.1",
     "nodemailer": "~0.6.3",
     "cheerio": "~0.15.0",
@@ -29,7 +29,8 @@
     "grunt-jsbeautifier": "~0.2.6",
     "grunt-contrib-watch": "~0.6.1",
     "grunt-mocha-cov": "~0.2.1",
-    "should": "~3.3.1"
+    "should": "~3.3.1",
+    "express": "~4.1.1"
   },
   "engine": "node >= 0.10.22"
 }
